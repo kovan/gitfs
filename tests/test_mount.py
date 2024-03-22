@@ -139,7 +139,7 @@ class TestMount(object):
                     + "max_offset, fetch_timeout, merge_timeout",
                 ),
             ]
-            mocked_parser.add_argument.has_calls(asserted_calls)
+            mocked_parser.add_argument.assert_has_calls(asserted_calls)
 
     def test_start_fuse(self):
         mocked_parse_args = MagicMock()

@@ -44,7 +44,7 @@ class not_in(object):
     def check_args(self, f, methods_args):
         to_check = []
 
-        args = inspect.getargspec(f)
+        args = inspect.getfullargspec(f)
         for arg in self.check:
             if arg in args[0]:
                 to_check.append(args[0].index(arg))

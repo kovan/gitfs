@@ -25,7 +25,7 @@ from gitfs.views import PassthroughView
 
 
 class TestPassthrough(object):
-    def setup(self):
+    def setup_method(self):
         root = "/the/root/path"
 
         def _full_path(partial):
@@ -256,7 +256,7 @@ class TestPassthrough(object):
             assert result == "magic"
             old = "/the/root/path/magic/path"
             new = "/the/root/path/magic/new"
-            mocked_rename.has_calls([call(old), call(new)])
+            mocked_rename.assert_has_calls([call(old), call(new)])
 
     def test_link(self):
         mocked_link = MagicMock()
@@ -379,5 +379,5 @@ class TestPassthrough(object):
             view = PassthroughView(repo=self.repo, repo_path=self.repo_path)
             view.truncate("/magic/path", 0, 0)
 
-            mocked_open.has_calls([call("/the/root/path/magic/path", "r+")])
+            mocked_open.assert_has_calls([call("/the/root/path/magic/path", "r+")])
             mocked_file.truncate.assert_called_once_with(0)

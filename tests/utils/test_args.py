@@ -82,4 +82,4 @@ class TestArgs(object):
             assert mocked_file.mkdtemp.call_count == 1
             mocked_log.setLevel.assert_called_once_with("DEBUG")
             mocked_urlparse.assert_has_calls([call(url), call("ssh://" + url)])
-            mocked_grp.getgrgid.has_calls([call(1)])
+            mocked_grp.getgrgid.assert_has_calls([call(1)])
