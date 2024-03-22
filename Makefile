@@ -3,7 +3,7 @@ BUILD_DIR:=build
 VIRTUAL_ENV?=$(BUILD_DIR)/virtualenv
 
 TESTS?=tests
-PYTHON?=3.7
+PYTHON?=3
 TEST_DIR:=/tmp/gitfs-tests
 MNT_DIR:=$(TEST_DIR)/$(shell bash -c 'echo $$RANDOM')_mnt
 REPO_DIR:=$(TEST_DIR)/$(shell bash -c 'echo $$RANDOM')_repo
