@@ -182,7 +182,7 @@ class Args(object):
         return "{}@{}".format(args.user, socket.gethostname())
 
     def get_repo_path(self, args):
-        return tempfile.mkdtemp(dir="/var/lib/gitfs")
+        return tempfile.mkdtemp()
 
     def get_ssh_key(self, args):
         return os.getenv("HOME", "/root/") + "/.ssh/id_rsa"
